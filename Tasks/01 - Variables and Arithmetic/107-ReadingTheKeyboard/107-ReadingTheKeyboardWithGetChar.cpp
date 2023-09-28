@@ -6,7 +6,7 @@ int main()
     char c = 0;
     
     //Read the keyboard and copy the ASCII code into c
-    c = getchar();
+    c = getchar(); // c = 0;
 
     //Write the decimal and ASCII representation to the terminal
     printf("You typed %c\n", c);
