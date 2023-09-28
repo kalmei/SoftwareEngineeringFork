@@ -29,8 +29,10 @@ int main()
 	//TASKS:
 
 	//Shift right by 1 and display
+	// value = 5??
 
 
 	//Shift left by 1 and display
+	// value = 22??
 
 }
