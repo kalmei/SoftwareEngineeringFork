@@ -22,7 +22,7 @@ int main()
 	number <<= 2;
 	displayAndCompare(number);
 
-	//Right right 4 bits
+	//Shift right 4 bits
 	number >>= 4;
 	displayAndCompare(number);
 
@@ -30,9 +30,18 @@ int main()
 
 	//Shift right by 1 and display
 	// value = 5??
+	number >>= 1;
+	displayAndCompare(number);
 
 
 	//Shift left by 1 and display
-	// value = 22??
+	// value = 10??
+	number <<= 1;
+	displayAndCompare(number);
+
+	// Task 3. THE LEAST SIGNIFICANT BIT WAS LOST. 
+	//Task 3. Shifting right changes the binary from 01011 to 00101 which is 5 in decimal. 
+	//        Shifting the same binary to the right does not recover the bit that was lost during the right shift resulting 
+	//        the value to be 01010 which is 10 in decimal (each shift towards left is multiply by 2 and to the right is divide by 2).
 
 }

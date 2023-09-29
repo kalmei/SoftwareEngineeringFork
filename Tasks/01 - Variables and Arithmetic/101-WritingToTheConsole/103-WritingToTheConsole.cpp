@@ -8,7 +8,9 @@ int main()
 
     // ************************ Using printf ******************************* 
     printf("Hello Everyone. We are using C\nHow are things?\n");
-    // TASK (a) - remove \n from the string above - what does this change? --- a newline is not created the output is displayed on the same line and the console will not step into a newline as well post debug.
+    // TASK (a) - remove \n from the string above - what does this change? --- 
+    // a newline is not created resulting in no line breaks and the output is displayed on the same line.
+    // the console will also stay on the same line due to the lack of \n input at the end of the sentence.
     
     // ******************* Using printf placeholders *********************** 
     int age = 23;

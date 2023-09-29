@@ -27,14 +27,22 @@ int main()
 
 	//Overflow
 	year = 65535;
-	year = year + 1;							// T4. turns negative due to syntax used not enough space/ memory within.
+	year = year + 1;							// T4. turns negative due to syntax used causing overflow and the 
+												//     value loops around starting from the minimum.
+	// year = 32767;							//( original line of code)
+	// year = year + 1;							//( original line of code)
 	// printf("year = %d\n", year);				//( original line of code)
 	printf("year = %u\n", year);				//T6.unsinged short provides correct value.
-												//T7. data type short can hold upto 16 bit values adding 1 results an integer over 16 bits and generates the putput value 0.
-												// T8. data type short is for 16 bit and cannot hold the above value since it exceeds 16 bits.
+
+												//T7. data type short can hold upto 16 bit values 
+												//    adding 1 results an integer over 16 bits and generates the output value 0.
+												
+												// T8. data type short is for 16 bit 
+												//     and cannot hold the above value since it exceeds 16 bits.
+	
 	//Divide
 	age = 50;
-	age = age / 2; // exception unhandled cannot compile.
+	age = age / 2;								// T3. changing 2 to 0 results in the error 'exception unhandled'.
 	printf("Half of 50 is %d\n", age);
 	 
 	//Divide and remainder
