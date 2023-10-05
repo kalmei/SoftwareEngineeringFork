@@ -33,6 +33,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "211-challenge", "211-challe
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "211-timetables", "211-timetables\211-timetables.vcxproj", "{C212867E-0BC0-4747-B149-2C61A677AC6E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "211-challenge-solution", "211-challenge-solution\211-challenge-solution.vcxproj", "{AB1AFABB-A446-4A11-8196-92EA5E4E6BD8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -161,6 +163,14 @@ Global
 		{C212867E-0BC0-4747-B149-2C61A677AC6E}.Release|x64.Build.0 = Release|x64
 		{C212867E-0BC0-4747-B149-2C61A677AC6E}.Release|x86.ActiveCfg = Release|Win32
 		{C212867E-0BC0-4747-B149-2C61A677AC6E}.Release|x86.Build.0 = Release|Win32
+		{AB1AFABB-A446-4A11-8196-92EA5E4E6BD8}.Debug|x64.ActiveCfg = Debug|x64
+		{AB1AFABB-A446-4A11-8196-92EA5E4E6BD8}.Debug|x64.Build.0 = Debug|x64
+		{AB1AFABB-A446-4A11-8196-92EA5E4E6BD8}.Debug|x86.ActiveCfg = Debug|Win32
+		{AB1AFABB-A446-4A11-8196-92EA5E4E6BD8}.Debug|x86.Build.0 = Debug|Win32
+		{AB1AFABB-A446-4A11-8196-92EA5E4E6BD8}.Release|x64.ActiveCfg = Release|x64
+		{AB1AFABB-A446-4A11-8196-92EA5E4E6BD8}.Release|x64.Build.0 = Release|x64
+		{AB1AFABB-A446-4A11-8196-92EA5E4E6BD8}.Release|x86.ActiveCfg = Release|Win32
+		{AB1AFABB-A446-4A11-8196-92EA5E4E6BD8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
