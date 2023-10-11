@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "309-switch-case", "309-swit
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "309-switch-case-solution", "309-switch-case-solution\309-switch-case-solution.vcxproj", "{F1D37FAC-1998-4C71-B368-126C4C26D4EA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "309- Swtich case modified", "309- Swtich case modified\309- Swtich case modified.vcxproj", "{4CF02FF7-D735-4D55-AB32-9F45EC1A51F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -111,6 +113,14 @@ Global
 		{F1D37FAC-1998-4C71-B368-126C4C26D4EA}.Release|x64.Build.0 = Release|x64
 		{F1D37FAC-1998-4C71-B368-126C4C26D4EA}.Release|x86.ActiveCfg = Release|Win32
 		{F1D37FAC-1998-4C71-B368-126C4C26D4EA}.Release|x86.Build.0 = Release|Win32
+		{4CF02FF7-D735-4D55-AB32-9F45EC1A51F8}.Debug|x64.ActiveCfg = Debug|x64
+		{4CF02FF7-D735-4D55-AB32-9F45EC1A51F8}.Debug|x64.Build.0 = Debug|x64
+		{4CF02FF7-D735-4D55-AB32-9F45EC1A51F8}.Debug|x86.ActiveCfg = Debug|Win32
+		{4CF02FF7-D735-4D55-AB32-9F45EC1A51F8}.Debug|x86.Build.0 = Debug|Win32
+		{4CF02FF7-D735-4D55-AB32-9F45EC1A51F8}.Release|x64.ActiveCfg = Release|x64
+		{4CF02FF7-D735-4D55-AB32-9F45EC1A51F8}.Release|x64.Build.0 = Release|x64
+		{4CF02FF7-D735-4D55-AB32-9F45EC1A51F8}.Release|x86.ActiveCfg = Release|Win32
+		{4CF02FF7-D735-4D55-AB32-9F45EC1A51F8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
