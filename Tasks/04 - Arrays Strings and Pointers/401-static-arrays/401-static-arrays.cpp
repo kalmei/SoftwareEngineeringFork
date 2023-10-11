@@ -36,7 +36,7 @@ int main()
         cout << "Element " << n << " of nums = " << nums[n] << endl;
     }
 
-
+    cout << endl;
 
     // **************************************************************************
     // TASK 1 - calculate and display the SUM of all elements in the array nums *
@@ -44,14 +44,20 @@ int main()
 
     //Write task 1 solution here
     int64_t sum = 0L;   //Result needs to be bigger than int to avoid overflow
-
+    for (unsigned int n = 0; n < N; n++) {
+        sum += (long)nums[n];
+    }
+    cout << "Sum of all elements in the array = " << sum << "." << endl;
 
     // ***********************************************************************************************************************
     // TASK 2 - calculate the mean of all elements (this will be a fractional value) and display to 1 decimal place accuracy *
     // ***********************************************************************************************************************
 
     //Write task 2 solution here
-
+    float mean;
+    mean = (float)sum / (float)N;
+    cout << "The mean of elements in the array = " << mean << "." << endl;
+    cout << endl;
 }
 
 
