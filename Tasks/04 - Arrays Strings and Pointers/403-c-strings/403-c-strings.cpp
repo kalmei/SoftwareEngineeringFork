@@ -50,7 +50,7 @@ int main()
     }
 
     //Modify anotherModule to be all upper case
-    for (int n = 0; n < (int)sizeof(anotherModule)-1; n++) {    //Note I am not changing the zero by doing this
+    for (int n = 0; n   < (int)sizeof(anotherModule)-1; n++) {    //Note I am not changing the zero by doing this
         char prevChar = anotherModule[n];                       //De-reference the array of characters for read
         char newChar = toupper(prevChar);                       //The C function toupper converts lower case to upper case
         anotherModule[n] = newChar;                             //Overwrite the array by de-referencing

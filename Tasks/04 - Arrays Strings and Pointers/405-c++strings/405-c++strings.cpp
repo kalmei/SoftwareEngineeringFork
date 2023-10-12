@@ -73,7 +73,9 @@ int main()
 
     //Convert strings back to numbers
     int parsedYear = stoi(strYear);
-    printf("The next year is %d\n", parsedYear + 1);
+    parsedYear++;
+    cout << "The next year is " << parsedYear << endl;
+    //printf("The next year is %d\n", parsedYear + 1);
 
     //Extract the c string (read only)
     const char* str = strYear.c_str();

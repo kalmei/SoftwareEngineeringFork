@@ -4,6 +4,7 @@
 #include <algorithm>
 using namespace std;
 
+
 int main()
 {
     // Challenge 1 - "Web Scraping"
@@ -28,9 +29,19 @@ int main()
     getline(std::cin, input);   //Read a line (users types this in)
     istringstream iss(input);   //Create a string "stream" (sequence of words)
     string word;                //This will hold the next word
-    while (iss >> word) {       //Read the next word (if there is one)
+    int count = 0;
+    while (iss >> word) { //Read the next word (if there is one)
         cout << word << endl;   //Output each word in turn
+        if (word == "the") {
+            count++;
+
+        }
+        
+
     }
+    cout << "the number of times the was used is " << count << endl;
+
+    
 
 }
 
