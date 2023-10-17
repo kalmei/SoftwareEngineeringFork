@@ -15,7 +15,7 @@ int main()
     cout << endl << "Enter value 2: ";
     cin >> var2;
 
-
+    
     // ***1***
     // create variables to hold the reslts of the calculation
     int diff = 0;
