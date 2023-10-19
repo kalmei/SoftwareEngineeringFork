@@ -1,20 +1,21 @@
 # Functions and Function Scope
 
-[Fundamentals of Functions](#fundamentals)
- [Simple Functions](#simple-functions)
- [Functions with parameters](#functions-with-parameters)
- [Function Prototypes](#function-prototypes)
- [Functions with return types](#returning-values)
- [Working with complex data structures](#working-with-complex-data-structures)
- [Passing Parameters by Pointer](#passing-parameters-by-pointer)
- [Passing Parameters by Reference](#passing-parameters-by-reference)
-[Function Scope](#function-scope)
- Global Functions
- Static Global Functions
- Namespaces
- Lambda Functions (local)
+**Contents**
 
-## Fundamentals
+* [Fundamentals of Functions](#fundamentals)
+   1.  [Simple Functions](#simple-functions)
+   1.  [Functions with parameters](#functions-with-parameters)
+   1.  [Function Prototypes](#function-prototypes)
+   1.  [Functions with return types](#returning-values)
+   1.  [Working with complex data structures](#working-with-complex-data-structures)
+   1.  [Passing Parameters by Pointer](#passing-parameters-by-pointer)
+   1.  [Passing Parameters by Reference](#passing-parameters-by-reference)
+* [Function Scope](#function-scope)
+   1.  [Global Functions](#global-functions)
+   1. [Static Global Functions and Variables](#static-global-variables-and-functions)
+* [Challenges](#challenges)
+ 
+## Fundamentals of Functions
 
 You have already used a function: `main`
 
@@ -87,7 +88,7 @@ Both are *semantically* similar - they perform the same basic function. So, let'
 
 | Task | 501-function (continued) |
 | :--- | :--- |
-| 6 | Create a function `displayBanner()` to perform the repetitive code. |
+| 6 | Create a function `displayBanner()` to perform the repetitive code (see code below). |
 | - | Use this function to remove code repetition in the main function |
 | - | Place this function just before `main` (see code snippet below) |
 | - | A solution is provided |
@@ -121,8 +122,10 @@ int main()
 >
 > We will meet this when you begin object orientated programming
 
-Note the position of the **global variable** `L` is not ideal. This variable can be both read and written from anywhere in your project. This means that you cannot reuse the variable name `L` elsewhere without causing ambiguity. 
+Note the position of the **global variable** `L` is not ideal. This variable can be both read and written from anywhere in your project. This means that you cannot reuse the variable name `L` elsewhere without causing ambiguity or errors.  
 
+> When the same global variable name is used twice by mistake, this is known as a **name collision**
+>
 > As a general rule, only use global variables when absolutely necessary.
 
 Let's now remove the need for the global `L` by *passing it as a parameter*.
@@ -158,7 +161,9 @@ We can then invoke this from main, passing in the length of the string.
 | 1 | Make 503-passing-parameters the start up project |
 | 2 | Step through the code using the debugger as shown in the video. |
 
-> **Note** that the variable `L` is now declared inside the `main` function. We say is it a local variable, and only visible within the **scope** of `main`.
+> **Note** that the variable `L` is now declared inside the `main` function. We say is it a **local variable**, and only visible within the **scope** of `main`.
+>
+> `L` is now local to main.
 
 What if we really wanted to make the function more useable, so that we can simply pass in the string, and have it displayed with the surrounding banner?
 
@@ -209,7 +214,7 @@ You will note that the code no longer builds. You may get an error such as:
 
 ` 'displayWithinBanner': identifier not found`
 
-The compiler performs one-pass through the file. If it encounters a function call (e.g. inside main) before it has seen the function, it has no way to check the data types are correct and compatible. Therefore, in C and C++, you usually **declare** your functions first.
+The compiler performs one-pass through the file. If it encounters a function name (e.g. inside `main`) before it has seen the function, it has no way to check the parameter and return data types are correct (or compatible). Therefore, in C and C++, you usually **declare** your functions first.
 
 | |
 | - |
@@ -224,7 +229,7 @@ void displayBanner(int stringLen);
 void displayWithinBanner(string message);
 ```
 
-Note the semi-colons at the end of each line. These are known as function **declarations**. They do not contain the code, just the interface. The function itself is called the function **definition**.
+Note the semi-colons at the end of each line. These are known as function **declarations**. They do not contain the code, just the *interface*. The function itself (currently at the bottom of main) is called the function **definition**.
 
 | |
 | - |
@@ -244,11 +249,11 @@ Now when you try and call these functions in your code (where ever they are loca
 >
 > This highlights an important difference between **strongly typed** languages (such as C,C++,Rust,Swift,C#,Java) and **loosely typed** languages (such as Python, PHP and JavaScript)
 >
-> Compilers try and perform checks at compile time, and will not build your code unless it conforms to certain (sometimes strict) rules. This makes them harder to write, but also safer in some respects.
+> Compilers try and perform checks at compile time, and will not build your code unless it conforms to certain (sometimes strict) rules. This makes them harder to write, but is also safer in some respects.
 >
 > Interpreted languages do not have compile phase, so such errors are typically found at *run time*. They also tend to be loosely typed, performing conversions automatically where it can (or crashing if it cannot be done). This makes testing challenging.
 >
-> Both have merits. As you can probably appreciate, safety or business critical applications tend to prefer the compiled type-safe languages. The downside is you need to compile your code for each platform you run it on. Web applications need to run on all types of machine, so tend to be interpreted.
+> Both have merits. As you can probably appreciate, safety or business critical applications tend to prefer the compiled type-safe languages. The downside is you need to compile your code for each platform you run it on. Web applications need to run on all types of machine, so tend to us interpreted languages.
 >
 > Check out [web assembly](https://developer.mozilla.org/en-US/docs/WebAssembly) to see how type-safe languages are now being used in web applications.
 >
@@ -280,9 +285,9 @@ Let's now add another function to try and make `main` simpler.
 
 | | |
 | - | - |
-| 3 | Create another function `absDiff` that accepts two integer parameters, and returns an integer. Don't forget the prototype at the top of the file. |
+| 3 | Create another function `absDiff` that accepts two integer parameters, and returns an integer. Don't forget the declaration (aka function prototype) at the top of the file. |
 | | The code should calculate the difference between the two parameters, such that the smaller value is always subtracted from the larger |
-| *hint* | Move and modify the code between the comments \*\*1\*\* and \*\*2\*\* out of main and into this new function. |
+| *hint* | Move and modify the code between the comments \*\*1\*\* and \*\*2\*\* out of main and into this new function. Don't forget to call this function from `main` |
 | - |  A solution is available |
 
 ### Working with complex data structures
@@ -347,11 +352,11 @@ Finally, we can copy from structure to another with ease:
 Point p2 = p;
 ```
 
-This will copy each member value from `p` into `p2`. Note that `p` and `p2` are separate independent variables, with differing addresses in memory.
+This will copy each member value from `p` into `p2`. Note that `p` and `p2` are separate independent variables, with different addresses in memory.
 
 > **Terminology**
 >
-> We say that the data type Point **encapsulates** it's members (two integers and a floating point value in this case).
+> We say that the data type `Point` **encapsulates** it's members (two integers and a floating point value in this case).
 
 | Task | 507-UsingStructures |
 | - | - |
@@ -418,7 +423,7 @@ void flipPoint(Point* p)
 }
 ```
 
-As the function `flipPoint` has the address of `p` (and not a copy!), it has the capability to directly modify it's memory, and hence it's data members. It therefore has the ability to overwrite whatever is passed to it.
+As the function `flipPoint` has the address of `p` (and not a copy of the data!), it has the capability to directly modify it's memory, and hence it's data members. It therefore has the ability to overwrite whatever is passed to it.
 
 > We say that `p1` has been passed **by reference** (as opposed to **by value**)
 
@@ -479,7 +484,7 @@ Doing this actually modified `p1`.
 
 > Looking at this line, it would be understandable if you did not expect `p1` to be modified!.
 > 
-> This is point of some controversy. When using pointers, it is apparent that you are passing an address by the presence of the `&` operator (e.g. flipPoint(&p1);)
+> This is point of some controversy. When using pointers, it is apparent that you are passing an address by the presence of the `&` operator (e.g. `flipPoint(&p1);`)
 > 
 > With references, you just have to know.
 
@@ -500,10 +505,10 @@ The data type `Point& p` is a reference type, backed by a hidden pointer. This b
 
 So far we have kept all our code in a single file. In practise, this is only done in the case of very simple projects. Most projects are build from multiple source files. There are many reasons for this:
 
-* Build Time - the compiler on builds files that have changed. If everything is in one file, everything has to be recompiled even with the slightest change.
-* Separation of Concerns - it is good to keep related code together. It helps navigate large complex projects, and maybe divide work between different individuals.
-* Reuse - if functions are all in one file, then to reuse those functions would need the sharing of all code with other projects. When factored into separate files, you can selectively reuse just the functions that you need. This also applies if you are reusing someone elses code (such as a complex library).
-* Safety - some functions can be made hidden from the rest of the project while others are shared. This might be because they are for "internal use only", and for others to use them directly risks breaking the internal state of the program.
+* **Build Time** - the compiler on builds files that have changed. If everything is in one file, everything has to be recompiled even with the slightest change.
+* **Separation of Concerns** - it is good to keep related code together. It helps navigate large complex projects, and maybe divide work between different individuals.
+* **Reuse** - if functions are all in one file, then to reuse those functions would need the sharing of all code with other projects. When factored into separate files, you can selectively reuse just the functions that you need. This also applies if you are reusing someone elses code (such as a complex library).
+* **Safety** - some functions can be made hidden from the rest of the project while others are shared. This might be because they are for "internal use only", and for others to use them directly risks breaking the internal state of the program.
 
 Splitting our project into separate files is sometimes confusing, but an essential skill as our projects grow larger.
 
@@ -511,62 +516,93 @@ Splitting our project into separate files is sometimes confusing, but an essenti
 
 All the functions we have written so far have been **global**. This is the default, and makes our function potentially accessible from anywhere within the project.
 
+This also makes it quite simple to move our functions into separate files within our project.
 
+| Task | 512-SplittingTheProject |
+| - | - |
+| 1. | [Watch this video on how to split your code in separate concerns](https://plymouth.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b3c3f6c9-e104-470f-9740-b09e00fd8b42) |
+| 2. | Create a project `512-SplittingTheProject` as shown in the video |
+| 3. | Try and replicate what you saw in the video |
+| - | A solution is available |
 
-### Static Global Functions
+Now that we've split our functions into separate files, they can all be accessed anywhere in the project. We say they have **global scope**.
 
-### Namespaces
+### Static Global Variables and Functions
 
-### Lambda Functions (local functions)
+Global functions are quite common, but sometimes we don't want them to be global. Global variables are actually not to be encouraged at all (try and use local). 
 
+There is an another option known as a **static global** scope that applies to both functions and variables.
 
-### Challenges
-
-Your program doesn't do anything yet bu it does contain one function - that is main(), every C/C++ program must have one (and only one) function called main() this is where program execution starts.
-
-| Task | Details |
-| :--- | :--- |
-| 2 | Modify your program to create two integer variables, add them together store the result in another variable. Use printf() to print the values of the variables and the result.
-
-| Task | Details |
-| :--- | :--- |
-| 3 | Modify your program to subtract the smaller of your two variables from the larger one. Assign the result of this subtraction to a new variable and use printf() to output all 4 variables. Your code might look a bit like this:
+In the next task (`513-StaticGlobals`), another `struct` is used to represent a rectangle.
 
 ```C++
-int main()
+struct Rect_t
 {
-    int var1, var2;
-
-    //Prompt the user
-    cout << endl << "Enter value 1: ";
-    cin >> var1;
-    cout << endl << "Enter value 2: ";
-    cin >> var2;
-
-    // create variables to hold the reslts of the calculation
-    int sum = var1 + var2;
-    int diff = 0;          
-
-    if (var1 >= var2)               // check which variable is larger - also this covers the case where they are the same
-    {
-        diff = var1 - var2;         // do the subtraction
-    }
-    else
-    {
-        diff = var2 - var1;         // do the subtraction
-    }
-
-    // print out the results
-    cout << "var1 = " << var1;
-    cout << ", var2 = " << var2;
-    cout << ", sum = " << sum; 
-    cout << ", absolute diff = " << diff << endl;
-}
+	uint32_t width;
+	uint32_t height;
+	uint64_t area;
+};
 ```
 
-| Task | Details |
+The data type is `Rect_t` (the capitalisation of `R` and the `_t` suffix are a convention for a *type*). This data type encapsulates three members:
+
+* width of the rectangle `width`
+* height of the rectangle `height`
+* area of the rectangle `area`
+
+Let's see this working in this simple example.
+
+| TASK | 513-StaticGlobals |
+| - | - |
+| 1. | Make 513-StaticGlobals the startup project. |
+| 2. | Step through the code, reading the comments and observing the output |
+|  | Step into each function (except `cout`) | 
+| 3. | There is a function called `updateArea`. It is never called in main. <a title="It is called when ever the area of the rectangle needs to be recalculated, such as when first created, or when one of the sides changes length.">When is it called and why?</a> |
+| 4. | Try calling `updateArea` from within main (uncomment the line at the end of main). <a title="Because it is a static function. It is only visible within the file in which it is defined">Why do you think this is now permitted?</a>|
+
+**Key Points:**
+
+The function `updateArea` is declared as `static`. This means it is only visible within the file in which is is defined, which in this case is `Rect_t.cpp`. It is not visible in any other file (this also means the function name `updateArea` could also be re-used in another file).
+
+We can use the `static` keyword to limit the **scope** of a function (or global variable). To understand *why* we limit scope, note the following:
+
+* In main,  the `width` and `height` are be set to literal values.
+   * They are never changed directly. It is always done via the functions `CreateRect`, `updateHeight` and `updateWidth`
+   * If either `width` or `height` are changed via these functions, the area is always re-calculated automatically by these functions. This is done so we cannot forget!
+   * For each combination of `height` and `width`, there is only one solution to area.
+* The member `area` is only re-calculated on need (when one of it's dependents changes). For more complex problems, where the cost of calculations is much higher, this technique is useful to maximise performance.
+* We never set the area from main (more strictly, anywhere outside `Rec_t.cpp`)
+   * There is no function provided for this (`updateArea` is static, so cannot be accessed from outside `Rec_t.cpp`)
+   * If we allowed this, what would the correct height and width be? For any chosen value of area, there can be many combinations of height and width
+* **If we stick to the functions provided**, the above is always enforced, and **the data integrity of a rectangle data structure cannot be broken**.
+
+What has been created here is an **Application Programming Interface** (known as **API**).
+
+> **Limitation**
+>  
+> We can still break this code by not using the API. The compiler cannot stop us modifying the area directly. 
+
+```C++
+	Rect_t r1 = CreateRect(10, 20);
+    r1.area = -99;
+	display(r1);
+```
+
+The good news is that there is a way to enforce these rules, but for that, we have to leave `C` completely and embrace the C++ way, which is Object Orientated Programming (OOP).
+
+## Challenges
+
+Below are a set of challenges for you to work on in your own time. Solutions will become available at a later date.
+
+| Challenge 1 | Simple API |
 | :--- | :--- |
-| 4 | The two operations (addition and subtraction) are good candidates for putting into functions. This will clean up the code in main() and allow the functions to be called from multiple places in your program. Lets start with the addition, add this code to your program before main()
+| 1 | Write a program to create two integer variables, add them together store the result in another variable. Use `cout` to print the values of the variables and the result.
+| 2 | Now create a simple API to add, subtract, multiply and divide integers |
+| - | These should be written in a separate source file `MyLib.cpp`. Create a header to list all the function declarations |
+| 3 | Modify main to test your API |
+| 4 | What happens if you accidentally divide by zero? Try it and think about how you might handle this. | 
+
+Here is the first API to get you stared:
 
 ```C++
 int add( int a, int b)
@@ -577,180 +613,36 @@ int add( int a, int b)
 }
 ```
 
-This defines a function called add() that takes two parameters (both type int) and returns an integer.
-
-To use this functio we need to 'call' it from within main() and process the value it returns.
-
-Here is the complete program now:
+| Challenge 2 | Working with Arrays |
+| :--- | :--- |
+| 1 | Create a new project. Within the `main()` function, add a for loop that runs through an array of integers such that it adds up all the values and stores the result in the variable `total`. Print out the total to the terminal
 
 ```C++
-#include <iostream>
-
-int add(int a, int b)
-{
-    int result;
-    result = a + b;
-    return result;
-}
-
-int main()
-{
-    int var1 = 42, var2 = 12;       // create the two integer variables
-    int sum = 0, diff = 0;          // create variables to hold the reslts of the calculation
-
-    sum = add(var1, var2);
-
-    if (var1 >= var2)               // check which variable is larger - also this covers the case where they are the same
-    {
-        diff = var1 - var2;         // do the subtraction
-    }
-    else
-    {
-        diff = var2 - var1;         // do the subtraction
-    }
-    // print out the results
-    printf("var1 = %d, var2 = %d sum = %d diff = %d\n\n", var1, var2, sum, diff);
-}
-```
-The line sum = add(var1, var2) calls the function add() passing it the two variables (var1 and var2) the return variable is assigned to sum.
-
-| Task | Details |
-| :--- | :--- |
-| 4 | Repeat the process above to add a function called difference() that takes as parameters the two variables var1 and var2 and returns the difference between them. Call your new function from within main().
-
-| Task | Details |
-| :--- | :--- |
-| 5 | Change your source code to that below, withing the main() function add a for loop that runs through the array nums[] and adds up all the values and put the result in the variable 'total'. print out the total to the terminal
-
-```C++
-#include <iostream>
-
-
 int main()
 {
     int nums[10] = { 12, 5, 77, 23, 102, 42, 98, 64, 17, 59};
     int total = 0;
     // your code below here
-
 }
-
 ```
-Something like this would work:
+
+| | |
+| - | - |
+| 2 | Can you write a function that takes an array as a parameter and returns the sum. |
+| - | You may struggle with this at first. Remember that an `array` variable is really a pointer (address). |
+| 3 | Add a second parameter to your function that specifies the length of the array.  Your function might look something like this |
 
 ```C++
-for (int i = 0; i <= 9; i++)
-{
-    total += a[i];
-}
-
-printf("Total is %d", total);
-
+int sumArray(int* arrayPointer, int N)
 ```
 
-| Task | Details |
-| :--- | :--- |
-| 6 | The task now is to put the code that sums the array into a function, to do this we need to pass the address of the array to the function like this:
-
-```C++
-#include <iostream>
-
-void sumArray(int *a)
-{
-    int total = 0;
-    
-    for (int i = 0; i <= 9; i++)
-    {
-        total += a[i];
-    }
-
-    printf("Total is %d", total);
-}
+| Challenge 3 (advanced) | C++ Collections |
+| - | - |
+| 1. | Look at the project `ArrayAndVector`. Build and read the comments |
+| 2. | Modify challenge 2 to use the `array<>` type? |
 
 
-int main()
-{
-    int nums[] = { 12, 5, 77, 23, 102, 42, 98, 64, 17, 59};
-    
-    sumArray(nums); 
-}
+---
 
-```
+[Back to Table of Contents](./README.md)
 
-Copy the code above into Visual Studio and compile.
-
-| Task | Details |
-| :--- | :--- |
-| 7 | The function sumArray in the code above works but only for an array with 10 elements. Amend the code so that the function sumArray now accepts two arguments, the second argument tells the function the size of the array. Also change the function such that it returns the result (total) to the function main().
-
-Something like this:
-```C++
-
-#include <iostream>
-
-int sumArray(int *a, int s)
-{
-    int total = 0;
-    printf("s = %d\n", s);
-    
-    for (int i = 0; i <= (s - 1); i++)
-    {
-        total += a[i];
-        printf("%d %d\n", i, a[i]);
-    }
-
-    return total;
-}
-
-
-int main()
-{
-    int nums[] = { 12, 5, 77, 23, 102, 42, 98, 64, 17, 59};
-    int arraySize = sizeof(nums) / sizeof(nums[0]);
-    printf("Array size %d\n", arraySize);
-    int result = 0;
-
-    result = sumArray(nums, arraySize); 
-
-    printf("Total is %d\n", result);
-}
-
-```
-
-| Task | Details |
-| :--- | :--- |
-| 7 | Finally, it's better to have the body of the functions(s) after main() with the 'prototype' of the function(s) before main(). Amend the code to achieve this.
-
-Something like this:
-
-```C++
-#include <iostream>
-
-int sumArray(int* , int );      // Don't forget the semicolon after the prototype !!
-
-int main()
-{
-    int nums[] = { 12, 5, 77, 23, 102, 42, 98, 64, 17, 59};
-    int arraySize = sizeof(nums) / sizeof(nums[0]);
-    printf("Array size %d\n", arraySize);
-    int result = 0;
-
-    result = sumArray(nums, arraySize); 
-
-    printf("Total is %d\n", result);
-}
-
-int sumArray(int* a, int s)
-{
-    int total = 0;
-    printf("s = %d\n", s);
-
-    for (int i = 0; i <= (s - 1); i++)
-    {
-        total += a[i];
-        printf("%d %d\n", i, a[i]);
-    }
-
-    return total;
-}
-
-```
