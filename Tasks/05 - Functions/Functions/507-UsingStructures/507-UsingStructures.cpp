@@ -36,10 +36,12 @@ int main()
     displayPoint(p3);               //Showing that p3 is indepdnent of p1
     cout << endl;
 
+
+
     //Fix display precision to 2 decimal places
     cout.precision(2);
     cout.setf(cout.fixed);
-    
+
     //Output the length
     cout << "The length = " << p3.length << endl;
 
@@ -47,10 +49,14 @@ int main()
     displayPoint(p3);               //Showing p3
     Point p4 = flipPoint(p3);
     displayPoint(p4);               //Showing p4
+    cout << endl;
 
-    Point p5;
-    addPoint(p2, p3);
-
+    Point c = { 4, 4, 6.0f };
+    Point d = { 3, 6, 9.0f };
+    Point e = addPoint(c, d);
+    cout << "Point e = ";
+    displayPoint(e);
+    cout << endl;
 }
 
 
