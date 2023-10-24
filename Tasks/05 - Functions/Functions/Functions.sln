@@ -43,6 +43,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "512-splitting the project (
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SIMPLE API", "SIMPLE API\SIMPLE API.vcxproj", "{CD68E047-3E42-412C-B6BE-2F10D985ABFB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WORKING WITH ARRAYS", "WORKING WITH ARRAYS\WORKING WITH ARRAYS.vcxproj", "{19E1C564-A2A9-4586-A002-E1AFD91BD453}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -211,6 +213,14 @@ Global
 		{CD68E047-3E42-412C-B6BE-2F10D985ABFB}.Release|x64.Build.0 = Release|x64
 		{CD68E047-3E42-412C-B6BE-2F10D985ABFB}.Release|x86.ActiveCfg = Release|Win32
 		{CD68E047-3E42-412C-B6BE-2F10D985ABFB}.Release|x86.Build.0 = Release|Win32
+		{19E1C564-A2A9-4586-A002-E1AFD91BD453}.Debug|x64.ActiveCfg = Debug|x64
+		{19E1C564-A2A9-4586-A002-E1AFD91BD453}.Debug|x64.Build.0 = Debug|x64
+		{19E1C564-A2A9-4586-A002-E1AFD91BD453}.Debug|x86.ActiveCfg = Debug|Win32
+		{19E1C564-A2A9-4586-A002-E1AFD91BD453}.Debug|x86.Build.0 = Debug|Win32
+		{19E1C564-A2A9-4586-A002-E1AFD91BD453}.Release|x64.ActiveCfg = Release|x64
+		{19E1C564-A2A9-4586-A002-E1AFD91BD453}.Release|x64.Build.0 = Release|x64
+		{19E1C564-A2A9-4586-A002-E1AFD91BD453}.Release|x86.ActiveCfg = Release|Win32
+		{19E1C564-A2A9-4586-A002-E1AFD91BD453}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
