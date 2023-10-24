@@ -1,3 +1,4 @@
+//LAB TASK IS DONE HERE NO NEW FOLDER...
 #include <iostream>
 using namespace std;
 
@@ -85,6 +86,8 @@ Point flipPoint(Point p)
     result.length = p.length;
     return result;
 }
+
+// LAB TASK: ADD STRUCTURE VALUES
 Point addPoint(Point a, Point b) {
     
     Point d;
