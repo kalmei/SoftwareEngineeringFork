@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{19e1c564-a2a9-4586-a002-e1afd91bd453}</ProjectGuid>
-    <RootNamespace>WORKINGWITHARRAYS</RootNamespace>
+    <ProjectGuid>{3142a089-806f-4485-b795-d68a20f2f580}</ProjectGuid>
+    <RootNamespace>WORKINGWITHARRAYS1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>WORKING WITH ARRAY (2)</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="WORKING WITH ARRAYS.cpp" />
+    <ClCompile Include="WORKING WITH ARRAYS (1).cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
