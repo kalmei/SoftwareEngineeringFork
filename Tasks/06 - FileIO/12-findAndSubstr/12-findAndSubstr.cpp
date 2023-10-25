@@ -23,41 +23,49 @@ int main()
         return errCode;
     }
 
-    // Parse String word by word
-    istringstream iss(dataString);
+    //Display
+    cout << dataString << endl;
 
-    // Read the first word
-    int moduleNumber;
-    string nextWord;
+    // Find the substring "ID:"
+    int pos = dataString.find("ID:");
+    if (pos == -1) {
+        cerr << "Identifier ID: is missing from file" << endl;
+        return -1;
+    }
 
-    while (iss.eof() == false)
+    //Now extract the string from this point forwards
+    cout << "Found \"ID:\" at character position " << pos << endl;
+    string previous  = dataString.substr(0, pos);   //Up to the location pos-1
+    string following = dataString.substr(pos);      //From pos to the end
+
+    //Now read the next two words
+    istringstream iss(following);   //From ID: onwards
+    string strTag;
+    string strCode;
+    iss >> strTag >> strCode;             //Read both
+    if (iss.fail()) {
+        cerr << "Could not read module code" << endl;
+        cout << "Time for coffee" << endl;
+        return -1;
+    }
+    cout << "Found " << strTag << endl;
+    cout << "Followed by " << strCode << endl;
+
+    //Conversion
+    int code;
+    try {
+        code = stoi(strCode);
+        cout << "New Module ID: " << code + 1 << endl;
+    }
+    catch (exception e)
     {
-        //Try to read the next word
-        iss >> nextWord;
-        if (iss.fail()) {
-            //Jump to the end of the while loop
-            continue;
-        }
-        // Display the word
-        cout << nextWord << endl;
-
-        //Look for the string that comes before the module code
-        if (nextWord == "ID:") {
-            cout << "Found \"ID:\". The code should be next...." << endl;
-            // Read the next word - it "should" be the module number, encoded as a string
-            iss >> nextWord;
-            if (!iss.fail()) {
-                //Convert a string to an integer
-                moduleNumber = stoi(nextWord);
-                //Write the new module code
-                cout << "COMP" << moduleNumber + 1 << endl;
-                //We are done! Break from the outer loop
-                break;
-            }
-        }
+        cerr << e.what() << endl;
+        cout << "That broke. Time for coffee" << endl;
+        return -1;
     }
 
     // Done
+    cout << "All is well!" << endl;
     return 0;
 }
 
@@ -75,9 +83,8 @@ void createFile(string fn)
     // (ii) Stream characters
     outputStream << "Hello COMP1000" << endl << "--------------" << endl;
     outputStream << "Subject Area: " << "COMP" << endl;
-
-    //We've switched to Roman Numerals - did I mention that in my last email?
-    outputStream << "Module ID: " << "M" << endl;
+    //We've switched to back to regular numerals - as discussed by the water cooler
+    outputStream << "Module ID: " << "1000" << endl;
 
     // (iii) Close
     outputStream.close();
