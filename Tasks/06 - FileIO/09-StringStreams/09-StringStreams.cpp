@@ -41,6 +41,7 @@ int main()
         }
     }
 
+
     //Final check - did we read an EOF character? This can happen when we read the last word or beyond it (space or newline)
     if (iss.eof()) {
         cout << "We reached the end of the file" << endl;

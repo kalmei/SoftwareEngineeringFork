@@ -39,6 +39,11 @@ int main()
             continue;
         }
         // Display the word
+        if (nextWord == "1000") {
+            moduleNumber = stoi(nextWord);
+            cout << "COMP" << moduleNumber + 1 << endl;
+            break;
+        }
         cout << nextWord << endl;
 
         //Look for the string that comes before the module code
@@ -47,7 +52,9 @@ int main()
             //TODO:
             // Read the next word
             // If successful, try to convert to an integer then break from the while loop
+            
         }
+        
     }
 
     // Done
