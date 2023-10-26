@@ -9,6 +9,7 @@ int main() {
 	calculateLength(H1);
 
 	holdVal H2 = switchVals(H1);
+
 	displayVals(H2);
 	flipVals(H2);
 	calculateLength(H2);

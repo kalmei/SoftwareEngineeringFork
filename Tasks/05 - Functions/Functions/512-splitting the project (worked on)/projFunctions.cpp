@@ -20,9 +20,8 @@ void flipVals(holdVal& p) {
 }
 
 holdVal switchVals(holdVal& p) {
-	int prevX = p.x;
-	p.x = p.y + 1;
-	p.y = prevX + 1;
+	p.x++;
+	p.y++;
 	p.length = 0;
 	return p;
 }
