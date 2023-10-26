@@ -32,14 +32,22 @@ int main()
         cerr << "Identifier ID: is missing from file" << endl;
         return -1;
     }
-   
+
+    int pos_1 = dataString.find("Area:");
+    if (pos_1 == -1) {
+        cerr << "Identifier not found" << endl;
+        return -1;
+    }
+
 
     //Now extract the string from this point forwards
     cout << "Found \"ID:\" at character position " << pos << endl;
 
-    string previous  = dataString.substr(0, pos);   //Up to the location pos-1
+    cout << "Found \"ID:\" at character position " << pos_1 << endl;
+
+    string previous = dataString.substr(0, pos);   //Up to the location pos-1
     string following = dataString.substr(pos);      //From pos to the end
-    
+
     //Now read the next two words
     istringstream iss(following);   //From ID: onwards
     string strTag;
@@ -52,9 +60,6 @@ int main()
     }
     cout << "Found " << strTag << endl;
     cout << "Followed by " << strCode << endl;
-
-    
-    //Conversion
     int code;
     try {
         code = stoi(strCode);
@@ -69,7 +74,26 @@ int main()
 
     // Done
     cout << "All is well!" << endl;
+    
+
+
+    string prev_1 = dataString.substr(0, pos_1);
+    string follow_1 = dataString.substr(pos_1);
+
+    istringstream iss_1(follow_1);
+    string strTag_1;
+    string strCode_1;
+    iss_1 >> strTag_1 >> strCode_1;
+    if (iss_1.fail()) {
+        cerr << "Could not read. error." << endl;
+        return -1;
+    }
+    cout << "Also Found: " << strTag_1 << endl;
+    cout << "Followed by: " << strCode_1 << endl;
+
     return 0;
+    //Conversion
+    
 }
 
 // Create a test file with filename fn

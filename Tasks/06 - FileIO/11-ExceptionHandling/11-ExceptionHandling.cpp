@@ -47,13 +47,16 @@ int main()
             // Read the next word - it "should" be the module number, encoded as a string
             iss >> nextWord;
             if (!iss.fail()) {
-                //Convert a string to an integer
-                moduleNumber = stoi(nextWord); //crash occurs after stepping into next line from here.
-                //Write the new module code
-                cout << "COMP" << moduleNumber + 1 << endl;
-                //We are done! Break from the outer loop
-                break;
+                try {
+                    moduleNumber = stoi(nextWord);
+                    cout << moduleNumber + 1 << endl;
+                }
+                catch (exception e) {
+                    cerr << "That failed with error \"" << e.what() << "\"" << endl;
+                    return -1;
+                }
             }
+
         }
     }
 

@@ -53,16 +53,16 @@ int main()
     int temp;
     for (int i = 0; i < 6; i++) {
         if (nums[i] < nums[i + 1]) {
-            temp = newNums[i];
-            //temp = nums[i];
+            //temp = newNums[i];
+            temp = nums[i];
             nums[i] = nums[5 - i];
             nums[5 - i] = temp;
         }
     }
     cout << "{";
     for (int i = 0; i < 6; i++) {
-        //cout << nums[i] << " , ";
-        cout << newNums[i] << " , ";
+        cout << nums[i] << ",";
+        //cout << newNums[i] << ",";
     }
     cout << "}" << endl;
     return 0;

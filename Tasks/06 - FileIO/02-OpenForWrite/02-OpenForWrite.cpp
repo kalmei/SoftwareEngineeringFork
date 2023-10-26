@@ -13,7 +13,7 @@ int main()
 
     // First open the file for write (use type ofstream)
     ofstream outputStream;
-    outputStream.open("myfile.txt");
+    outputStream.open("myzzzfile.txt");
 
     //Check to see if it worked
     if (outputStream.is_open() == false) {
