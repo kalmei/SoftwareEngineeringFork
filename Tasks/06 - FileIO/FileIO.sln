@@ -49,6 +49,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05 - APPENDING FILES (worke
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "09 - String Streams (worked on)", "09 - String Streams (worked on)\09 - String Streams (worked on).vcxproj", "{AA427E4C-AB44-4F76-86A9-A1E7DC7A8A38}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06-getline", "06-getline\06-getline.vcxproj", "{3F4420B4-DB28-4E0F-92A6-6E43579D7F83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -241,6 +243,14 @@ Global
 		{AA427E4C-AB44-4F76-86A9-A1E7DC7A8A38}.Release|x64.Build.0 = Release|x64
 		{AA427E4C-AB44-4F76-86A9-A1E7DC7A8A38}.Release|x86.ActiveCfg = Release|Win32
 		{AA427E4C-AB44-4F76-86A9-A1E7DC7A8A38}.Release|x86.Build.0 = Release|Win32
+		{3F4420B4-DB28-4E0F-92A6-6E43579D7F83}.Debug|x64.ActiveCfg = Debug|x64
+		{3F4420B4-DB28-4E0F-92A6-6E43579D7F83}.Debug|x64.Build.0 = Debug|x64
+		{3F4420B4-DB28-4E0F-92A6-6E43579D7F83}.Debug|x86.ActiveCfg = Debug|Win32
+		{3F4420B4-DB28-4E0F-92A6-6E43579D7F83}.Debug|x86.Build.0 = Debug|Win32
+		{3F4420B4-DB28-4E0F-92A6-6E43579D7F83}.Release|x64.ActiveCfg = Release|x64
+		{3F4420B4-DB28-4E0F-92A6-6E43579D7F83}.Release|x64.Build.0 = Release|x64
+		{3F4420B4-DB28-4E0F-92A6-6E43579D7F83}.Release|x86.ActiveCfg = Release|Win32
+		{3F4420B4-DB28-4E0F-92A6-6E43579D7F83}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
