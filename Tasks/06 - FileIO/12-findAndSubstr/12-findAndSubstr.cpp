@@ -32,12 +32,14 @@ int main()
         cerr << "Identifier ID: is missing from file" << endl;
         return -1;
     }
+   
 
     //Now extract the string from this point forwards
     cout << "Found \"ID:\" at character position " << pos << endl;
+
     string previous  = dataString.substr(0, pos);   //Up to the location pos-1
     string following = dataString.substr(pos);      //From pos to the end
-
+    
     //Now read the next two words
     istringstream iss(following);   //From ID: onwards
     string strTag;
@@ -51,6 +53,7 @@ int main()
     cout << "Found " << strTag << endl;
     cout << "Followed by " << strCode << endl;
 
+    
     //Conversion
     int code;
     try {

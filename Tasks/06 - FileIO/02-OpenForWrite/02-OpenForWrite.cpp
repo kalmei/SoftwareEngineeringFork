@@ -13,7 +13,7 @@ int main()
 
     // First open the file for write (use type ofstream)
     ofstream outputStream;
-    outputStream.open("myfile.txt");
+    outputStream.open("myzzzfile.txt");
 
     //Check to see if it worked
     if (outputStream.is_open() == false) {
@@ -21,7 +21,7 @@ int main()
         return -1;
     }
 
-    //Write a string to the file
+    //Write a string to the file - instead of cout, it's `outputStream`
     outputStream << "12345" << endl;
     outputStream << "-----" << endl;
 
