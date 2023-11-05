@@ -32,7 +32,7 @@ int main()
         cerr << "Identifier ID: is missing from file" << endl;
         return -1;
     }
-
+    // NEEDED TO ADD ONE FOR AREA
     int pos_1 = dataString.find("Area:");
     if (pos_1 == -1) {
         cerr << "Identifier not found" << endl;
@@ -43,7 +43,7 @@ int main()
     //Now extract the string from this point forwards
     cout << "Found \"ID:\" at character position " << pos << endl;
 
-    cout << "Found \"ID:\" at character position " << pos_1 << endl;
+    cout << "Found \"Area:\" at character position " << pos_1 << endl;
 
     string previous = dataString.substr(0, pos);   //Up to the location pos-1
     string following = dataString.substr(pos);      //From pos to the end
@@ -76,7 +76,7 @@ int main()
     cout << "All is well!" << endl;
     
 
-
+    //SET FOR AREA
     string prev_1 = dataString.substr(0, pos_1);
     string follow_1 = dataString.substr(pos_1);
 

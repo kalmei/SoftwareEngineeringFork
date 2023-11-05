@@ -73,7 +73,26 @@ int main()
     }
 
     // Done
-    cout << "All is well!" << endl;
+    cout << "All is well for ID section now onto to the next one!" << endl << endl;
+
+    regex pattern_1("\\s*Subject\\s*(Area:)\\s*(\\w*)\\s*");
+    smatch newmatch;
+    string tag_1;
+    string word;
+
+    if (regex_search(dataString, newmatch, pattern_1)) {
+        cout << "FULL MATCH: " << newmatch[0] << endl;
+        if (newmatch.size() >= 3) {
+            tag_1 = newmatch[1];
+            word = newmatch[2];
+            cout << "PAIR LOCATED: (" << tag_1 << "," << word << ")" << endl;
+            cout << "Required word: " << word << endl;
+        }
+        dataString = newmatch.suffix().str();
+    }
+    else {
+        cout << "ERROR" << endl;
+    }
     return 0;
 }
 

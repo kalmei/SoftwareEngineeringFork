@@ -53,5 +53,11 @@ void displayVal(int a, int b) {
 
 
 
+// Q1) In subtraction, to store the answer would the use of "unsigned int" be required if no if/else statements are used to reorder the 
+//	   arithmetic such that greatest value is used first?
+// A2) 
+
+
+
 
 
