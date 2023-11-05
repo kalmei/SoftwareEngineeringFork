@@ -21,15 +21,21 @@ public:
         updateArea();
     }
 
-    //Setter
+    //Setter for height
     void setHeight(float h) {
         if (height != h) {
             height = h;
             updateArea();
         }
     }
-
-    //Getter
+    //Setter for width
+    void setWidth(float w) {
+        if (width != w) {
+            width = w;
+            updateArea();
+        }
+    }
+    //Getter for area since its private
     double getArea() {
         return area;
     }

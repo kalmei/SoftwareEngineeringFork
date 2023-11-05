@@ -2,7 +2,7 @@
 using namespace std;
 
 //global x
-//int x = 0;
+int x = 0;
 
 //Project namespace for both variables and code
 namespace COMP1000 {
@@ -22,6 +22,6 @@ int main()
 
     //Now infer COMP1000 as the namespace to save on typing and clutter
     using namespace COMP1000;
-    x = addOne(x);
-    cout << "x = " << x << endl;
+    COMP1000::x = addOne(COMP1000::x);
+    cout << "x = " << COMP1000::x << endl;
 }

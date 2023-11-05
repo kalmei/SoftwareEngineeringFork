@@ -11,10 +11,16 @@ int main()
     setHeight(r1, 10.0f);
     display(r1);
 
+    cout << "USING CLASSES NOW" << endl;
     //Using C++ class
     Rect r2(2.0, 3.0);
     r2.display();
     r2.setHeight(10.0f);
     r2.display();
+    r2.setWidth(22.0f); //setter for width
+    r2.display();
+
+
+    return 0;
 }
 

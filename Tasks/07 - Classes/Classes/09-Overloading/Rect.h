@@ -84,6 +84,10 @@ namespace COMP1000 {
                 updateArea();
             }
         }
+        void updateArea(int w, int h) {
+           int area = w * h;
+           cout << area << endl;
+        }
 
         // Output to terminal
         void display() {

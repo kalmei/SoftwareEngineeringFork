@@ -15,3 +15,10 @@ StringBanner::StringBanner(string txt, char bannerCharacter) {
 }
 
 //Move display() here
+void StringBanner::display() {
+	StringBanner::displayLine();
+	cout << endl;
+	cout << bannerChar << " " << msg << " " << bannerChar << endl;
+	StringBanner::displayLine();
+	cout << endl;
+}

@@ -13,5 +13,5 @@ int main()
 
     r0.display();
     r1.display();
+    r0.updateArea(4, 5);
 }
-
