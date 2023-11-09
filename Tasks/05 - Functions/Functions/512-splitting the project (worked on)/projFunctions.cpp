@@ -6,7 +6,7 @@ void displayVals(holdVal p) {
 }
 
 void calculateLength(holdVal& p) {
-	float h = sqrt(p.x * p.x + p.y * p.y);
+	float h = (float)sqrt(p.x * p.x + p.y * p.y);
 	p.length = h;
 	cout << "The length of aforementioned structure is: " << p.length << endl;
 	cout << "The structure should now look like this: " << "{" << p.x << ", " << p.y << ", " << p.length << "}" << endl << endl;
@@ -19,7 +19,7 @@ void flipVals(holdVal& p) {
 	cout << "Flipped ints -> " << "(" << p.x << "," << p.y << ")" << endl;
 }
 
-holdVal switchVals(holdVal& p) {
+holdVal switchVals(holdVal p) {
 	p.x++;
 	p.y++;
 	p.length = 0;
