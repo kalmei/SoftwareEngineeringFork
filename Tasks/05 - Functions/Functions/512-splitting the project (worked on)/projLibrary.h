@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <math.h>
 using namespace std;
 
 struct holdVal {
@@ -13,4 +14,4 @@ void displayVals(holdVal p);
 void calculateLength(holdVal& p);
 void flipVals(holdVal& p);
 holdVal addVals(holdVal p1, holdVal p2);
-holdVal switchVals(holdVal& p);
+holdVal switchVals(holdVal p);

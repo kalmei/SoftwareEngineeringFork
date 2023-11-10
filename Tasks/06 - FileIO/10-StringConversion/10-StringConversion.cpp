@@ -43,6 +43,7 @@ int main()
             moduleNumber = stoi(nextWord);
             cout << "COMP" << moduleNumber + 1 << endl;
             break;
+
         }
         cout << nextWord << endl;
 
